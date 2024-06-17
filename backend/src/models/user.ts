@@ -1,13 +1,14 @@
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
 
+
 export type UserType ={
-    id: string;
+    _id: string;
     email: string;
     password: string;
     firstName: string;
     lastName: string;
-    
+
 };
 //we need to create schema to tell the property that a user contains
 const userSchema = new mongoose.Schema({
