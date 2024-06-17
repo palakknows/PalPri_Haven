@@ -37,4 +37,7 @@ router.post("/register",async (req: Request,res:Response)=> {
 
         }
 })
+/**
+ * Express router for handling user routes.
+ */
 export default router;
