@@ -1,18 +1,31 @@
-import cors from 'cors';
+import cookieParser from "cookie-parser";
+import cors from "cors";
 import "dotenv/config";
-import express from 'express';
-import mongoose from 'mongoose';
-import userRoutes from './routes/users';
+import express from "express";
+import mongoose from "mongoose";
+import authRoutes from "./routes/auth";
+import userRoutes from "./routes/users";
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string) ;
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
-const app = express();//create a new app
-app.use(express.json());//convert body of API automatically to json
-app.use(express.urlencoded({ extended: true }));//parse the url
-app.use(cors())//prevents request from certain urls
+const app = express();
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors({
+    origin: process.env.FRONTEND_URL,
+    credentials:true,
+})
+);
 
-app.use("/api/users", userRoutes);
+app.use("/api/users",userRoutes);
+app.use("/api/auth",authRoutes);
 
-app.listen(7000,()=>{
-console.log("Server is running on localhost: 7000");
+
+app.listen(7000, () => {
+    //server running on localhost:7000
+    console.log('server running on http://localhost:7000');
 });
+
+
+
