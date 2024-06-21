@@ -22,7 +22,7 @@ export const AppContextProvider=(
             retry:false,
         })
         return (
-            <AppContext.Provider 
+            <AppContext.Provider
             value={{
                 showToast:(toastMessage)=>{
                     setToast(toastMessage);

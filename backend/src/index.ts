@@ -8,6 +8,8 @@ import userRoutes from "./routes/users";
 const express = require('express');
 const cors = require('cors');
 
+
+
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 const app = express();
