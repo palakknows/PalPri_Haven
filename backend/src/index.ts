@@ -1,13 +1,20 @@
+import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
-//import cors from "cors";
+import cors from "cors";
 import "dotenv/config";
-//import express from "express";
+import express from "express";
 import mongoose from "mongoose";
 import path from "path";
 import authRoutes from "./routes/auth";
+import myHotelRoutes from "./routes/my-hotels";
 import userRoutes from "./routes/users";
-const express = require('express');
-const cors = require('cors');
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
@@ -26,6 +33,7 @@ app.use(express.static(path.join(__dirname,"../..frontend/dist")))
 
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
+app.use("/api/my-hotels",myHotelRoutes);
 
 
 app.listen(7000, () => {
