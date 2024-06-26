@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import "dotenv/config";
 //import express from "express";
 import mongoose from "mongoose";
+import path from "path";
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/users";
 const express = require('express');
@@ -20,6 +21,8 @@ app.use(cors({
     credentials:true,
 })
 );
+
+app.use(express.static(path.join(__dirname,"../..frontend/dist")))
 
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
