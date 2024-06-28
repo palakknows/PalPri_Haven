@@ -2,6 +2,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import GuestsSection from "../GuestsSection";
 import DetailsSection from "./DetailsSection";
 import FacilitiesSection from "./FacilitiesSection";
+import ImagesSection from "./ImagesSection";
 import TypeSection from "./TypeSection";
 
 export type HotelFormData={
@@ -26,6 +27,17 @@ const ManageHotelForm = () => {
             <TypeSection/>
             <FacilitiesSection/>
             <GuestsSection/>
+            <ImagesSection/>
+            <span className="flex justify-end">
+          <button
+            //disabled={isLoading}
+            type="submit"
+            className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl disabled:bg-gray-500"
+          >
+            {/* {isLoading ? "Saving..." : "Save"} */}
+            Save
+          </button>
+        </span>
         </form>
         </FormProvider>
     );
