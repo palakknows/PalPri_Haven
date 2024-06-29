@@ -40,8 +40,8 @@ test("should allow user to add a hotel", async ({ page }) => {
   await page.locator('[name="childCount"]').fill("4");
 
   await page.setInputFiles('[name="imageFiles"]', [
-    path.join(__dirname, "files", "1.png"),
-    path.join(__dirname, "files", "2.png"),
+    path.join(__dirname, "files", "pexels-andrea-davis-11535806.jpg"),
+    path.join(__dirname, "files", "pexels-fazyl-nalgiev-1230771.jpg"),
   ]);
 
   await page.getByRole("button", { name: "Save" }).click();

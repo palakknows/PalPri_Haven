@@ -48,7 +48,7 @@ const DetailSection=()=>{
                 )}
             </label>
             <label className="text-gray=700 text-sm font-bold flex-1">Star Rating
-            <select {...register("StarRating",{required:"This field is required",
+            <select {...register("starRating",{required:"This field is required",
 
             })}
             className="border rounded w-full p-2 text-gray-700 font-normal"
@@ -62,8 +62,8 @@ const DetailSection=()=>{
                 ))}
             </select>
             
-            {errors.StarRating && (
-                <span className="text-red-500 text-sm">{errors.StarRating.message}</span>
+            {errors.starRating && (
+                <span className="text-red-500 text-sm">{errors.starRating.message}</span>
                 )}
             </label>
         </div>
