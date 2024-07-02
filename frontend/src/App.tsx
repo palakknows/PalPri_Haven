@@ -10,6 +10,7 @@ import AddHotel from "./pages/AddHotel";
 import EditHotel from "./pages/EditHotel";
 import MyHotels from "./pages/MyHotels";
 import Register from "./pages/Register";
+import Search from "./pages/Search";
 import SignIn from "./pages/SignIn";
 
 
@@ -21,9 +22,14 @@ const{isLoggedIn}=useAppContext();
         <Route path="/" element={<Layout>
           <p>Home Page</p>
         </Layout>} />
-        <Route path="/search" element={<Layout>
-          <p>Search Page</p>
-        </Layout>} />
+        <Route
+         path="/search" 
+         element={
+         <Layout>
+          <Search/>
+        </Layout>
+      } 
+      />
 
         <Route path="/register" element={
         <Layout>

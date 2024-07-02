@@ -17,7 +17,7 @@ const ImagesSection = () => {
     imageUrl: string
   ) => {
     event.preventDefault();
-    setValue(
+    setValue( 
       "imageUrls",
       existingImageUrls.filter((url) => url !== imageUrl)
     );

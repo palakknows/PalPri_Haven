@@ -68,6 +68,7 @@ test("should display hotels", async ({ page }) => {
 test("should edit hotel", async ({ page }) => {
   await page.goto(`${UI_URL}my-hotels`);
 
+  //bohot saare view details button hai toh sabse pehla wal access kro
   await page.getByRole("link", { name: "View Details" }).first().click();
 
   await page.waitForSelector('[name="name"]', { state: "attached" });
