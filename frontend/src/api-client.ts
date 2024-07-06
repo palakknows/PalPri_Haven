@@ -4,7 +4,7 @@
 //   PaymentIntentResponse,
 //   UserType,
 // } from 
-import { HotelType } from "../../backend/src/shared/types";
+import { HotelSearchResponse, HotelType } from "../../backend/src/shared/types";
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
 
