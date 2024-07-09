@@ -5,7 +5,8 @@ import verifyToken from "../middleware/auth";
 import Hotel from "../models/hotel";
 import { BookingType, HotelSearchResponse } from "../shared/types";
 
-const stripe = new Stripe(process.env.STRIPE_API_KEY as string);
+
+const stripe=new Stripe(process.env.STRIPE_API_KEY as string );
 
 const router = express.Router();
 
@@ -100,6 +101,7 @@ router.post(
 
     const totalCost = hotel.pricePerNight * numberOfNights;
 
+    //it contains client so that they could access their password for taking money out of their account
     const paymentIntent = await stripe.paymentIntents.create({
       amount: totalCost * 100,
       currency: "gbp",
@@ -118,7 +120,7 @@ router.post(
       clientSecret: paymentIntent.client_secret.toString(),
       totalCost,
     };
-
+//passing object as json response
     res.send(response);
   }
 );
