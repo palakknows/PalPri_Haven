@@ -18,6 +18,7 @@ router.get("/", verifyToken, async (req: Request, res: Response) => {
       );
 
       const hotelWithUserBookings: HotelType = {
+        //mongoose document to object
         ...hotel.toObject(),
         bookings: userBookings,
       };
