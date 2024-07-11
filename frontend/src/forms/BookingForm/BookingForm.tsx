@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useParams } from "react-router-dom";
 import {
-    PaymentIntentResponse,
-    UserType,
+  PaymentIntentResponse,
+  UserType,
 } from "../../../../backend/src/shared/types";
 import * as apiClient from "../../api-client";
 import { useAppContext } from "../../contexts/AppContext";
@@ -124,7 +124,7 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 
         <div className="bg-blue-200 p-4 rounded-md">
           <div className="font-semibold text-lg">
-            Total Cost: £{paymentIntent.totalCost.toFixed(2)}
+            Total Cost: ₹{paymentIntent.totalCost.toFixed(2)}
           </div>
           <div className="text-xs">Includes taxes and charges</div>
         </div>
